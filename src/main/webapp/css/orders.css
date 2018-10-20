@@ -1,0 +1,125 @@
+.confirm{
+	margin: 0 auto;
+	width: 800px;
+	position: relative;
+}
+.confirm p{
+	font-size: 16px;
+	background: #4bc5c4;
+	height: 25px;
+	padding: 5px;
+	width: 65px;
+	color: #fff;
+	line-height: 25px;
+	margin:10px 0;
+}
+.confirm i{
+	width: 0;
+	height: 0;
+	border-left: 32px solid #4bc5c4;
+	border-top: 17px solid transparent;
+	border-bottom: 18px solid transparent;
+	position: absolute;
+	left: 75px;
+	top: 0px;
+}
+#order_tb{
+	margin: 10px 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 15px;
+	text-align: center;
+}
+#order_tb th,td{
+	border: 1px solid #a7cbff;
+}
+thead tr{
+	background: #4bc5c4;
+	border-top: 3px solid #a7cbff;
+	height: 35px;
+	color: #fff;
+	font-size: 16px;
+}
+.goods{
+	width: 330px;
+}
+.goods img{
+	width: 90px;
+	height: 85px;
+	margin: 5px;
+}
+.goods span{
+	margin-left: 30px;
+	width: 160px;
+	display: inline-block;
+	height: 50px;
+}
+.price{
+	width: 160px;
+}
+.count{
+	width: 150px;
+}
+.count span{
+	padding: 5px;
+}
+.subtotal{
+	width: 150px;
+}
+.tbody tr:hover{
+	background: RGB(238,246,255);
+}
+.note,.address{
+	position: relative;
+}
+.note input{
+	width: 800px;
+	height: 35px;
+	text-indent: 10px;
+}
+.addinfo{
+	height: 40px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	padding: 10px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	position: relative;
+}
+.addinfo span:first-child{
+	display: inline-block;
+	margin-right: 50px;
+}
+.addinfo em{
+	display: block;
+}
+.to_add{
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.foot{
+	position: relative;
+	font-size: 16px;
+	margin-top: 20px;
+	height: 40px;
+	margin-bottom: 30px;
+}
+.all_price{
+	position: absolute;
+	right: 100px;
+	margin-top: 5px;
+	color: #000;
+}
+.pay{
+	position: absolute;
+	right: 10px;
+	width: 80px;
+	height: 35px;
+	background: #4bc5c4;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+}

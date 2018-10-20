@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>收货地址</title>
+	<link rel="stylesheet" type="text/css" href="css/address.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/distpicker.js"></script>
+	<script src="js/address.js"></script>
+	<script src="js/distpicker.data.js"></script>
+</head>
+<body>
+<div class="container clearfix">
+	<div class="top">
+		<em>选择收货地址</em><i></i>
+	</div>
+	<div class="default_address">常用地址</div>
+	<div class="addressList">
+		<!-- 
+		<div class="address">
+			<div class="address_hd">
+				<span class="name fl">陈可爱</span>
+				<span class="tel rg">15927537656</span>
+			</div>
+			<div class="address_bd">湖北省武汉市洪山区白沙洲大道110号武昌工学院</div>
+			<div class="line"></div>
+			<div class="delete"><img src="images/delete.png">删除</div>
+		</div>
+		 -->
+	</div>
+	<div class="noaddress">
+		<p>您还没有收货地址，请添加！</p>
+		<button class="to_address">添加收货地址</button>
+	</div>
+	<div class="add_address to_address">添加收货地址</div>
+</div>
+
+<!-- 新增地址 -->
+<div class="mask"></div>
+<div id="address_form">
+	<div class="form_hd">
+		<img src="images/index/51logo.png">
+		<a href="javascript:;" title="关闭" class="close">x</a>
+	</div>
+	<h3>新增收货地址</h3>
+	<div class="error">错误提示信息！</div>
+	<form>
+		<div class="form_bd">
+			<label class="form_label">收货人:</label>
+			<input class="form_input auth" type="text" name="receviename" placeholder="请输入收货人姓名">
+		</div>
+		<div class="form_bd">
+			<label class="form_label">联系电话:</label>
+			<input class="form_input auth" type="text" name="tel" placeholder="请输入联系电话" maxlength="11">
+		</div>
+		<div class="form_bd">
+			<label class="form_label">选择地区:</label>
+			<div data-toggle="distpicker" id="select_area">
+			    <select data-province="北京市"></select>
+			    <select data-city="北京城区"></select>
+			    <select data-district="东城区"></select>
+			</div>
+		</div>
+		<div class="form_bd">
+			<label class="form_label">详细地址:</label>
+			<input class="form_input auth" type="text" name="address" placeholder="请输入详细地址">
+		</div>
+		<p>51商城<i>《使用条款》</i></p>
+		<button type="button" name="register_btn">确认添加</button>
+	</form>
+</div>
+</body>
+</html>

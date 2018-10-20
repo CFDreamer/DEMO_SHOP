@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CarMapper">
+<cache/>
+   <!-- 往购物车里添加记录 -->
+   <insert id="addCar">
+      insert into car(memberid,goodsid,goodsname,price,count,picture) values(#{car.memberid},
+      #{car.goodsid},#{car.goodsname},#{car.price},#{car.count},#{car.picture})
+   </insert>
+   <!-- 查询购物车中是否有某件商品 -->
+   <select id="selectCarGoods" resultType="com.entity.Car">
+     select * from car where goodsid=#{goodsid} and memberid=#{memberid}
+   </select>
+   <!-- 更新用户商品的count -->
+   <update id="updateGoodsCount">
+     update car set count=(#{count}) where goodsid=#{goodsid} and memberid=#{memberid}
+   </update>
+    <!--
+	 获取用户的购物车
+    -->
+    <select id="selectMemberCar" resultType="com.entity.Car">
+      select memberid,goodsid,goodsname,price,count,picture from car where memberid=#{memberid}
+    </select>
+    
+    <!-- 
+	 清空用户的购物车，或者删除他的某一件商品
+     -->
+    <delete id="deleteMemberCarOrSomeGoods">
+       delete from car where memberid=#{memberid}
+       <!-- 判断是否是删除某些商品 -->
+       <if test="null != goodsidList  and '' != goodsidList  ">
+       and goodsid in
+       <!-- 循环遍历需要删除商品的id -->
+         <foreach collection="goodsidList" item="goodsid" open="(" separator="," close=")" >
+            #{goodsid}
+         </foreach>
+       </if>
+    </delete>
+    
+    <!-- 获取用户的预购清单 -->
+    <select id="selectMemberPurchaseList" resultType="com.entity.Car">
+       select * from car where memberid=#{memberid} and goodsid in
+       <foreach collection="goodsidList" item="goodsid" open="(" separator="," close=")" >
+            #{goodsid}
+       </foreach>
+    </select>
+</mapper>

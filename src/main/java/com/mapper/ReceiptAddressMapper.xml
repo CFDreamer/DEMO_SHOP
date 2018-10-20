@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ReceiptAddressMapper">
+<cache/>
+	<cache />
+
+	<!-- 插入用户收货地址 -->
+	<insert id="insertMemberAddress">
+		insert into receiptAddress(memberid,receviename,tel,address)
+		values(#{address.memberid},
+		#{address.receviename},#{address.tel},#{address.address})
+	</insert>
+
+	<!-- 用户使用一次收货地址，该地址使用次数+1 -->
+	<update id="updateMemberAddressUsercount">
+		update receiptAddress set usecount=usecount+1 where id=#{id}
+	</update>
+
+	<!-- /** * 获取用户的全部收货地址（按照使用次数的降序排列） */ -->
+	<select id="selectMemberAddress" resultType="com.entity.ReceiptAddress">
+		select * from receiptAddress where memberid=#{memberid} order by usecount
+		desc
+	</select>
+
+	<!-- 查询用户使用次数最多的地址 -->
+	
+	<select id="selectMaxMemberAddressUsecount" resultType="com.entity.ReceiptAddress">
+		select * from receiptAddress where memberid=#{memberid} order by usecount
+		desc limit 0,1
+	</select>
+	
+	<!-- 删除用户的收货地址 -->
+	
+	<delete id="deleteMemberRecAddress">
+	   delete from receiptAddress where id=#{id}
+	</delete>
+	
+	<!-- 根据id查询收货地址 -->
+	<select id="selectMemberRecAddressByID" resultType="com.entity.ReceiptAddress">
+	  select * from  receiptAddress where id=#{id}
+	</select>
+</mapper>

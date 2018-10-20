@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.GoodsMapper">
+ <cache/>
+    <resultMap type="com.entity.Goods" id="selectDiscountGoodsStep">
+       <result column="typename" property="type.typename"/>
+   </resultMap>  
+ 
+   <select id="selectAllGoods" resultType="com.entity.Goods">
+     select * from goods
+   </select>
+   
+   <!-- 查询新商品 -->
+   <select id="selectNewGoods" resultMap="selectDiscountGoodsStep">
+      select id,typeid,goodsname,picture,price,nowprice ,typename from goods ,supertype WHERE
+       goods.typeid=supertype.sid and newgoods=1
+       <if test="'' !=typename and null !=typename">
+        and typename like '%#{typename}%'
+      </if>  
+     
+   </select>
+   <!-- 查询折扣商品 -->
+ 
+   <select id="selectDiscountGoods" resultMap="selectDiscountGoodsStep">
+      select id,typeid,goodsname,picture,price,nowprice ,typename from goods ,supertype WHERE
+       goods.typeid=supertype.sid and price!=nowprice
+       <if test="'' !=typename and null !=typename">
+        and typename like '%#{typename}%'
+      </if>  
+   </select>
+   <!-- 查询热卖商品 -->
+   <select id="selectHotGoods" resultType="com.entity.Goods">
+     select id,goodsname,price,picture from goods ORDER BY hit DESC LIMIT 0,2
+   </select>
+   <!--查询商品详情 -->
+   <select id="selectDetailsByID" resultType="com.entity.Goods">
+      select id,picture,price,nowprice,goodsname,introduce from goods where id=#{id}
+   </select>
+   <!-- 该商品的同类商品 -->
+   <select id="selectSimilar" resultType="com.entity.Goods">
+     select goodsname,id,price,id,picture FROM goods where typeid in(select typeid FROM goods  where id=#{id})
+     
+   </select>
+   
+   <!--  商品点击次数加1-->
+   <update id="updateGoodsHit">
+     update goods set hit=hit+1 where id=#{id}
+   </update>
+   
+   <!--  -->
+</mapper>
+ 

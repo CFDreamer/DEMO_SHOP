@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.MemberMapper">
+   <!-- 用户注册 -->
+   <insert id="Register">
+     insert into member(username,password,tel,email) values(#{member.username},#{member.password},#{member.tel},#{member.email})
+   </insert>
+   
+   <!-- 登录验证 -->
+   <select id="login" resultType="string">
+      select password from member where username=#{username}
+   </select>
+   
+   <select id="selectMemberInfoByUsername" resultType="com.entity.Member">
+     select id,username,tel,email from member where username=#{username}
+   </select>
+</mapper>

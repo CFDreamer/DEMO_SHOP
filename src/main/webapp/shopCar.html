@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>shopCart</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="css/shopCar.css"/>
+    	<script type="text/javascript" src="js/shopCar.js"></script>
+	</head>
+	<body>
+		<table id="cartTable">
+			<thead>
+				<tr>
+					<th><label><input type="checkbox" class="check-all check" />&nbsp;全选</label></th>
+					<th>商品</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>小计</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+        	<!-- <tr>
+        		<td class="checkbox"><input type="checkbox" class="check-one check"></td>
+        		<td class="goods"><img src="images/2.jpg"><span>Canon/佳能 PowerShot SX50 HS</span></td>
+        		<td class="price">3888.50</td>
+        		<td class="count"><span class="reduce"></span><input type="text" value="1"><span class="add">+</span></td>
+        		<td class="subtotal">3888.50</td>
+        		<td class="operation"><span class="delete">删除</span></td>
+        	</tr> -->
+			</tbody>
+		</table>
+		<div class="foot" id="foot">
+			<label class="select-all fl"><input type="checkbox" class="check-all check">&nbsp;全选</label>
+			<a href="javascript:;" class="fl delete" id="deleteAll">删除</a>
+			<div class="closing fr">结算</div>
+			<div class="total fr">合计：￥<span id="priceTotal">0.00</span></div>
+			<div class="selected fr" id="selected">已选商品<span id="selectedTotal">0</span>件</div>	
+		</div>	
+	</body>
+</html>

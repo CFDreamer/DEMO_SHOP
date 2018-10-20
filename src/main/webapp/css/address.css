@@ -1,0 +1,207 @@
+.container{
+	width: 600px;
+	margin:10px auto;
+}
+.top{
+	position: relative;
+	margin-bottom: 15px;
+}
+.top em{
+	font-size: 16px;
+	background: #4bc5c4;
+	height: 25px;
+	padding: 5px;
+	width: 65px;
+	color: #fff;
+	line-height: 25px;
+	margin:10px 0;
+}
+.top i{
+	width: 0;
+	height: 0;
+	border-left: 25px solid #4bc5c4;
+	border-top: 16px solid transparent;
+	border-bottom: 15px solid transparent;
+	position: absolute;
+	left: 106px;
+	top: -3px;
+}
+.default_address{
+	height: 25px;
+	background: #4bc5c4;
+	line-height: 25px;
+	font-size: 15px;
+	color: #fff;
+	text-indent: 15px;
+}
+.address{
+	overflow: hidden;
+	color: #050505;
+	font-size: 13px;
+	border: 1px solid #9fe3e0;
+	margin-bottom: 12px;
+}
+.address_hd{
+	height: 25px;
+	line-height: 25px;
+}
+.name{
+	margin-left: 15px;
+}
+.tel{
+	margin-right: 15px;
+}
+.address_bd{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 15px;
+}
+.line{
+	width: 570px;
+	margin-left: 15px;
+	height: 2px;
+	background: #ccc;
+}
+.delete{
+	float: right;
+	padding: 5px;
+	height: 22px;
+	line-height: 22px;
+	cursor: pointer;
+}
+.delete img{
+	width: 25px;
+	height: 25px;
+	margin-top: -3px;
+}
+.add_address{
+	height: 30px;
+	background: #4bc5c4;
+	line-height: 30px;
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+	margin-top: 22px;
+	cursor: pointer;
+}
+.noaddress{
+	height: 300px;
+	background: #eee;
+	text-align: center;
+	margin-top: 15px;
+	display: none;
+}
+.noaddress p{
+	padding-top: 130px;
+	font-size: 13px;
+	color: #050505;
+}
+.noaddress button{
+	width: 105px;
+	height: 33px;
+	background: #4bc5c4;
+	color: #fff;
+	margin-top: 10px;
+	margin-left: 245px;
+}
+/*新增地址表单*/
+.mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	display: none;
+}
+#address_form{
+	display: none;
+	position: absolute;	
+	background: #fff;
+	width: 430px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1001;
+	color: #050505;
+}
+.form_hd{
+	position: relative;
+}
+#address_form img{
+	width: 100px;
+	height: 50px;
+	margin-left: 20px;
+}
+.form_hd a{
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 18px;
+}
+#address_form h3{
+	width: 100%;
+	height: 35px;
+	background: #4bc5c4;
+	text-align: center;
+	line-height: 35px;
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 25px;
+}
+.form_bd{
+	height: 35px;
+	margin-bottom: 10px;
+}
+.form_label{
+	font-size: 15px;
+	width: 125px;
+	display: inline-block;
+	text-align: right;
+	height: 35px;
+	line-height: 35px;
+}
+.form_input{
+	display: inline-block;
+	height: 35px;
+	width: 220px;
+	margin-left: 8px;
+	text-indent: 8px;
+}
+#address_form p{
+	margin-left: 135px;
+	font-size: 13px;
+}
+#address_form i{
+	color: #666;
+}
+button{
+	display: block;
+	text-align: center;
+	width: 222px;
+	height: 39px;
+	margin-left: 135px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	background: #e12525;
+	color: #fff;
+	cursor: pointer;
+}
+.error{
+	position: absolute;
+	width: 430px;
+	background: #e12525;
+	top: 85px;
+	color: #fff;
+	height: 20px;
+	text-align: center;
+	display: none;
+}
+#select_area{
+	margin-left: 8px;
+	display: inline;
+}
+#select_area select{
+	width: 75px;
+}
